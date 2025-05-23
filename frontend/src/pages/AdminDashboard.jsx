@@ -1,29 +1,30 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+// import HeroSection from './HeroSection';
+import HeroSection from '../components/HeroSection';
+// import FeaturesGrid from './FeaturesGrid';
+import FeaturesGrid from '../components/FeaturesGrid';
+// import CTASection from './CTASection';
+import CTASection from '../components/CTASection';
 import AdminNavbar from '../components/AdminNavbar';
-// import Sidebar from '../../components/admin/Sidebar';
-import AdminHeader from '../components/AdminHeader';
 
 const Dashboard = () => {
   return (
-    <div className="flex h-screen flex-col">
-      {/* Top Navbar */}
-      <AdminNavbar />
+    <div className="space-y-8">
+    <AdminNavbar/>
+      <HeroSection 
+        title="Result Management System"
+        subtitle="Empowering educators with streamlined result processing"
+        quote="Education is not the filling of a pail, but the lighting of a fire."
+        author="William Butler Yeats"
+      />
       
-      <div className="flex flex-1 overflow-hidden">
+      <FeaturesGrid />
+      
+      <CTASection 
+        title="Ready to transform your workflow?"
+        description="Our system handles 500+ concurrent users with 99.9% uptime, ensuring seamless result management during peak periods."
         
-        
-        {/* Main Content */}
-        <div className="flex-1 flex flex-col overflow-hidden">
-          {/* Page Header */}
-         <AdminHeader/>
-          
-          {/* Feature Pages Render Here */}
-          <main className="flex-1 overflow-y-auto p-6 bg-gray-50">
-          
-          </main>
-        </div>
-      </div>
+      />
     </div>
   );
 };
