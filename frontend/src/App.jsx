@@ -9,6 +9,7 @@ import ResultCRUD from "./pages/ResultCRUD";
 import StudentManagement from "./pages/StudentManagement";
 import ClassConfig from "./pages/ClassConfig";
 import DataExport from "./pages/DataExport";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
        <Route path = "/admin-dashboard/students" element= {<StudentManagement/>}/>
        <Route path = "/admin-dashboard/classes" element= {<ClassConfig/>}/>
        <Route path = "/admin-dashboard/exports" element= {<DataExport/>}/>
+       <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );

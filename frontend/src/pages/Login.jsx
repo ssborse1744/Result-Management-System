@@ -7,14 +7,24 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Simple validation
-    if (instituteId === 'admin123' && password === 'admin@123') {
-      navigate('/admin-dashboard');
-    } else {
-      setError('Invalid credentials');
+    setError('');
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ instituteId, password })
+      });
+      const data = await res.json();
+      if (res.ok && data.token) {
+        localStorage.setItem('token', data.token);
+        navigate('/admin-dashboard');
+      } else {
+        setError(data.error || 'Invalid credentials');
+      }
+    } catch (err) {
+      setError('Server error');
     }
   };
 
@@ -55,6 +65,12 @@ const Login = () => {
             Login
           </button>
         </form>
+        <button
+          onClick={() => navigate('/register')}
+          className="w-full mt-4 bg-gray-200 text-blue-700 py-2 px-4 rounded hover:bg-blue-300"
+        >
+          Register New Admin
+        </button>
       </div>
     </div>
   );
