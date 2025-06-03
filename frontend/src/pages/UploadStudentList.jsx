@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { FiUpload, FiX } from 'react-icons/fi';
 
-const BulkUpload = () => {
+const UploadStudentList = () => {
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -90,7 +90,7 @@ const BulkUpload = () => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-gray-800">Bulk Student Upload</h2>
+      <h2 className="text-2xl font-bold text-gray-800">Upload Student List</h2>
       
       <div className="bg-white p-6 rounded-lg shadow space-y-4">
         <div className="max-w-xl mx-auto">
@@ -191,4 +191,4 @@ const BulkUpload = () => {
   );
 };
 
-export default BulkUpload;
+export default UploadStudentList; 

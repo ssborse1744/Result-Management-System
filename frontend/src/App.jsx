@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import CheckResult from "./pages/checkResult";
 import Result from "./pages/Result";
 import AdminDashboard from "./pages/AdminDashboard";
-import BulkUpload from "./pages/BulkUpload";
+import UploadStudentList from "./pages/UploadStudentList";
 import ResultCRUD from "./pages/ResultCRUD";
 import StudentManagement from "./pages/StudentManagement";
 import ClassConfig from "./pages/ClassConfig";
@@ -18,14 +18,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/admin-login" element={<Login />} />
         <Route path = "/checkresult" element= {<CheckResult/>}/>
-       <Route path="/result/:instituteId/:rollNumber" element={<Result />} />
-       <Route path = "/admin-dashboard" element= {<AdminDashboard/>}/>
-       <Route path = "/admin-dashboard/bulk-upload" element= {<BulkUpload/>}/>
-       <Route path = "/admin-dashboard/results" element= {<ResultCRUD/>}/>
-       <Route path = "/admin-dashboard/students" element= {<StudentManagement/>}/>
-       <Route path = "/admin-dashboard/classes" element= {<ClassConfig/>}/>
-       <Route path = "/admin-dashboard/exports" element= {<DataExport/>}/>
-       <Route path="/register" element={<Register />} />
+        <Route path="/result/:instituteId/:rollNumber" element={<Result />} />
+        <Route path = "/admin-dashboard" element= {<AdminDashboard/>}/>
+        <Route path = "/admin-dashboard/upload-students" element= {<UploadStudentList/>}/>
+        <Route path = "/admin-dashboard/results" element= {<ResultCRUD/>}/>
+        <Route path = "/admin-dashboard/students" element= {<StudentManagement/>}/>
+        <Route path = "/admin-dashboard/classes" element= {<ClassConfig/>}/>
+        <Route path = "/admin-dashboard/exports" element= {<DataExport/>}/>
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );

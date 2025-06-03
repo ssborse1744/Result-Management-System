@@ -3,13 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 const AdminNavbar = () => {
   const navItems = [
-    { path: 'bulk-upload', name: 'Bulk Upload', icon: '📤' },
-    { path: 'results', name: 'Result Management', icon: '📊' },
-    { path: 'students', name: 'Students', icon: '👨‍🎓' },
-    { path: 'classes', name: 'Class Setup', icon: '🏫' },
-    { path: 'exports', name: 'Data Export', icon: '💾' }
+    { path: 'upload-students', name: 'Upload Student List' },
+    { path: 'results', name: 'Result Management' },
+    { path: 'students', name: 'Students' },
+    { path: 'classes', name: 'Class Setup' },
+    { path: 'exports', name: 'Data Export' }
   ];
-
   return (
     <nav className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
@@ -20,14 +19,13 @@ const AdminNavbar = () => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) => 
-                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
+                  `inline-flex items-center px-3 pt-1 border-b-2 text-sm font-medium ${
                     isActive 
                       ? 'border-blue-500 text-gray-900' 
                       : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
                   }`
                 }
               >
-                <span className="mr-2 text-lg">{item.icon}</span>
                 {item.name}
               </NavLink>
             ))}
